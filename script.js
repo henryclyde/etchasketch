@@ -16,7 +16,7 @@ clearButton.addEventListener("click", () => {
 const createButton = document.createElement("button");
 createButton.addEventListener("click", () => {
     
-    createGrid(inputSize.value);
+    createGrid(inputSize.value == '' ? 16 : inputSize.value);
 });
 clearButton.style.backgroundColor="red";
 clearButton.style.color="black";
@@ -45,14 +45,13 @@ let createGrid = function(size = 16) {
         for (let y = 0; y < size; y++) {
             const column = document.createElement('div');
             column.setAttribute("class", "box");
-            row.appendChild(column);
+            row.appendChild(column);            
             column.addEventListener("mouseover", () => {
                 column.style.backgroundColor = "white";
             });
         }
-        
     }
 }
 
-
+createGrid();
 
